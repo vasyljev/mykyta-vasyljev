@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'HelveticaRoundedLT-Black';
+  src: url('HelveticaRoundedLT-Black.eot?#iefix') format('embedded-opentype'),  url('HelveticaRoundedLT-Black.otf')  format('opentype'),
+	     url('HelveticaRoundedLT-Black.woff') format('woff'), url('HelveticaRoundedLT-Black.ttf')  format('truetype'), url('HelveticaRoundedLT-Black.svg#HelveticaRoundedLT-Black') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
