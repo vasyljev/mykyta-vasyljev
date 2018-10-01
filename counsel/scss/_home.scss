@@ -173,7 +173,7 @@ header {
         a { 
             display: flex;
             width: 200px;
-            height: 50px;
+            height: 45px;
             color: white;
             text-decoration: none;
             justify-content: center;
@@ -192,7 +192,7 @@ header {
     #drop-down-language-label {
         display: flex;
         width: 200px;
-        height: 50px;
+        height: 45px;
         color: white;
         text-decoration: none;
         justify-content: center;
@@ -258,7 +258,7 @@ header {
             content: '';
             position: absolute;  
             right: -235px;
-            top: -95px;          
+            top: -98px;          
             width: 300px;
             height: 380px;
             border: 10px solid #fde428;
@@ -269,7 +269,7 @@ header {
             content: '';
             position: absolute; 
             right: -225px;
-            top: -95px;
+            top: -98px;
             width: 300px;
             height: 400px;
             border: 10px solif transparent;
@@ -316,7 +316,7 @@ header {
     }
     .content {
         width: 566px;
-        height: 324px;
+        // height: 324px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -698,6 +698,7 @@ footer {
         .container {
             flex-direction: column;
             align-items: center;
+            justify-content: space-between;
             &::after {
                 display: none;                
             }
@@ -759,5 +760,154 @@ footer {
         .menu-button {
             display: block;             
         }            
+    }
+    #slider {
+        margin-top:20px;
+    margin-bottom: 110px;
+    }
+    .no-risk {
+        .content {
+            width: 90%;
+        }
+        .no-risk-image {
+            width: 90%;
+            flex-basis: 80vw;;
+        }
+    }
+    .popular-services {
+        h5 {
+            width: 90%;
+        }
+       .services {
+           flex-direction: column;
+           align-items: center;
+           .sevice-item {
+               width: 95%;
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               .service-img {
+                   width: 80%;
+               }
+               .service-name {
+                   margin-top: 20px;
+               }
+               .text-discription  {
+                margin-top: 20px;
+                margin-bottom: 30px;
+               }
+           }
+       }
+    }
+}
+
+@media only screen and  (max-width: 550px) {
+    #slider {
+        height: 180px;
+        margin-bottom: 50px;
+        .activities {
+            align-self: flex-end;
+            margin-right: 50px;
+            width: 285px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            position: relative;
+            &::before {
+            display: none;
+            }
+            &::after {
+                display: none;
+            }    
+            h2 {
+                font-size: 40px;
+                margin-bottom: 25px;
+            }
+
+            a {            
+                font-size: 18px;            
+            }
+        }
+    }
+    h3 {        
+        font-size: 26px;        
+    }
+    h5 {       
+        font-size: 16px;       
+    }
+    .looking-consultant {    
+        p {
+            font-size: 16px;            
+        }
+        #contact-now-button {           
+            font-size: 14px;    
+        }
+    }
+    .statistics {  
+        .container {
+            flex-direction: column;
+            padding: 15px;
+        }     
+        .statistics-item {
+            margin: 10px 0;
+            .stat-value {
+                
+                font-size: 40px;                
+                margin-bottom: 15px;                
+            }
+            .stat-discription {               
+                font-size: 14px;                
+            }
+        }
+    }
+    .why-we {
+        .container {
+          
+         .why-we-text {             
+             h3 {
+                 margin-bottom: 10px;               
+             }
+             h5 {
+                 margin-bottom: 10px;
+             }
+             .text-discription {
+                margin-bottom: 25px;
+             }
+             .our-service-link {
+                padding-top: 20px;                 
+             }
+            }
+        } 
+    }
+    .citation {
+       .bracket {            
+            font-size: 40px;            
+        }
+        .citation-text {            
+            font-size: 16px;
+            line-height: 30px;            
+            margin-top: 20px;
+        }
+        #citation-autor {           
+            
+            margin-top: 60px;
+            
+            
+            
+        }
+    }
+    .contact-us {        
+        .contact-desc {
+            width: 100%;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .contact-info {           
+            margin-top: 30px;
+        }
+                
+        .contact-item-text {
+            margin-left: 5%;            
+        }
     }
 }
