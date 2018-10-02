@@ -211,7 +211,14 @@ header {
         
     }
 }
+
+//------------------------------------ SLIDER -------------------------------------------
+
+
 #slider {
+    input {
+        display: none;
+    }
     margin-top:220px;
     margin-bottom: 210px;
     display: flex;
@@ -221,9 +228,57 @@ header {
     height: 380px;
     position: relative;
     z-index: 0;
+    .overflow {
+        overflow: hidden;
+        width: 528px;
+        height: 400px;
+    }
+    .slides {
+        width: 300%;
+        display: flex;
+        margin-top: 100px;
+    }
+    #slide-1:checked ~ .overflow>.slides {
+        margin-left: 0;
+        transition: all .5s;
+    }
+    #slide-2:checked ~ .overflow>.slides {
+        margin-left: -100%;
+        transition: all .5s;
+    }
+    #slide-3:checked ~ .overflow>.slides {
+        margin-left: -200%;
+        transition: all .5s;
+    }
     
+    #slide-1:checked ~ .slider-nav>label:nth-child(2),
+    #slide-2:checked ~ .slider-nav>label:nth-child(3),
+    #slide-3:checked ~ .slider-nav>label:nth-child(1) {        
+        display: block;
+        position: absolute;
+        right: 0;
+        width: 30px;
+        height: 30px;
+        background: url('../img/next-slider-arr.png') no-repeat;
+    }
+
+    #slide-1:checked ~ .slider-nav>label:nth-child(3),
+    #slide-2:checked ~ .slider-nav>label:nth-child(1),
+    #slide-3:checked ~ .slider-nav>label:nth-child(2) {
+        display: block;        
+        position: absolute;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        background: url('../img/prev-slider-arr.png') no-repeat;
+    }
+    
+
     .slider-nav {
         color: #fde428;
+        width: 200px;
+        height: 30px;
+        position: relative;
         a {
             color: #fde428;
             font-family: 'Montserrat', sans-serif;
@@ -248,7 +303,8 @@ header {
         }
     }
     .activities {
-        margin-right: 245px;
+        margin-right: 235px;
+        margin-left: 8px;
         width: 285px;
         display: flex;
         flex-direction: column;
@@ -294,6 +350,13 @@ header {
         }
     }
 }
+
+
+
+
+
+
+
 .cntr-padding {
     padding-top: 100px;
     padding-bottom: 100px;
@@ -761,6 +824,10 @@ footer {
             display: block;             
         }            
     }
+
+
+    
+
     #slider {
         margin-top:20px;
     margin-bottom: 110px;
