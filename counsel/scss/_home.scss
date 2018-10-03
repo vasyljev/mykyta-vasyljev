@@ -240,15 +240,15 @@ header {
     }
     #slide-1:checked ~ .overflow>.slides {
         margin-left: 0;
-        transition: all .5s;
+        transition: all .5s ease-in-out;
     }
     #slide-2:checked ~ .overflow>.slides {
         margin-left: -100%;
-        transition: all .5s;
+        transition: all .5s ease-in-out;
     }
     #slide-3:checked ~ .overflow>.slides {
         margin-left: -200%;
-        transition: all .5s;
+        transition: all .5s ease-in-out;
     }
     
     #slide-1:checked ~ .slider-nav>label:nth-child(2),
@@ -257,7 +257,7 @@ header {
         display: block;
         position: absolute;
         right: 0;
-        width: 30px;
+        width: 25px;
         height: 30px;
         background: url('../img/next-slider-arr.png') no-repeat;
     }
@@ -268,7 +268,7 @@ header {
         display: block;        
         position: absolute;
         left: 0;
-        width: 30px;
+        width: 25px;
         height: 30px;
         background: url('../img/prev-slider-arr.png') no-repeat;
     }
@@ -279,6 +279,15 @@ header {
         width: 200px;
         height: 30px;
         position: relative;
+        text-align: center;
+        #nav-text {
+            color: #fde428;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12.5px;
+            text-transform: uppercase;
+            text-decoration: none; 
+           
+        }
         a {
             color: #fde428;
             font-family: 'Montserrat', sans-serif;
