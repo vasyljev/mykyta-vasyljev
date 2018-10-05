@@ -229,6 +229,10 @@ h5 {
 
 .service-img {
     margin-bottom: 45px;
+    &:hover {
+        filter: brightness(200%);
+        animation: right-left-anim .3s ease-in;
+    }
 }
 
 .service-description {
@@ -1433,5 +1437,22 @@ input:focus::placeholder, textarea:focus::placeholder {
         transform-origin:top right;
         display: none;
         opacity: 0;        
+    }
+}
+@keyframes right-left-anim {
+    0% {
+        transform: translate(-10%,0);
+    }
+    25% {
+        transform: translate(20%,0);
+    }
+    50% {
+        transform: translate(-20%,0);
+    }
+    75% {
+        transform: translate(10%,0);
+    }
+    100% {
+        transform: translate(-10%,0);
     }
 }
