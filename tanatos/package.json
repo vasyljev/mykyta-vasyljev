@@ -1,8 +1,8 @@
 {
-  "name": "scss_lessons",
+  "name": "tanatos_project",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Mykyta Vasyljev project",
+  "main": "script.js",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
@@ -14,7 +14,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mykyta Vasyljev",
   "license": "ISC",
   "dependencies": {
     "jquery": "^3.3.1"
