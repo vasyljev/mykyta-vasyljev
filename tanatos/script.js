@@ -9,9 +9,9 @@ $(document).ready(function(){
 
 	$(window).scroll(function() {
 		if($(this).scrollTop() != 0) {
-			$('#arrow-to-top').fadeIn();
+			$('#arrow-to-top-link').fadeIn();
 		} else {
-			$('#arrow-to-top').fadeOut();
+			$('#arrow-to-top-link').fadeOut();
 		}
 	});
 
