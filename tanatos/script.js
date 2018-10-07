@@ -9,14 +9,21 @@ $(document).ready(function(){
 
 	$(window).scroll(function() {
 		if($(this).scrollTop() != 0) {
-			$('#arrow-to-top').fadeIn();
+			$('#arrow-to-top-link').fadeIn();
 		} else {
-			$('#arrow-to-top').fadeOut();
+			$('#arrow-to-top-link').fadeOut();
 		}
 	});
 
 	$('#arrow-to-top-link').click(function() {
 		$('body, html').animate({scrollTop:0},800);
 	});
-
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > 100) {
+			$('.service').fadeIn().animate({right: 0, opacity: 1},800);
+		}
+	}); 	
+	
 });
+
+

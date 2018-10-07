@@ -203,8 +203,9 @@ h5 {
     }
 }
 
-#services {
+#services {    
     width: 100%;
+    
 }
 
 #services > .container {
@@ -215,12 +216,17 @@ h5 {
 }
 
 .service {
+    display: flex;
+    
+    position: relative;
+    right: -1000px;
+    opacity: 0;
     width: 275px;
     // height: 236px;
     padding: 0 50px;
     text-align: center;
     font-family: 'Open Sans', sans-serif;
-    display: flex;
+    
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -229,6 +235,10 @@ h5 {
 
 .service-img {
     margin-bottom: 45px;
+    &:hover {
+        filter: brightness(200%);
+        animation: right-left-anim .3s ease-in;
+    }
 }
 
 .service-description {
@@ -843,7 +853,7 @@ label {
     color: #3b434c;
     border-radius: 10px;
     border: none;
-    padding-left: 20px;
+    padding: 0 20px;
 }
 
 .input-form > input::placeholder {
@@ -1433,5 +1443,32 @@ input:focus::placeholder, textarea:focus::placeholder {
         transform-origin:top right;
         display: none;
         opacity: 0;        
+    }
+}
+@keyframes right-left-anim {
+    0% {
+        transform: translate(-10%,0);
+    }
+    25% {
+        transform: translate(20%,0);
+    }
+    50% {
+        transform: translate(-20%,0);
+    }
+    75% {
+        transform: translate(10%,0);
+    }
+    100% {
+        transform: translate(-10%,0);
+    }
+}
+@keyframes block-anim {
+    0% {
+        transform: translate(-1000%,0%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0%,0%);
+        opacity: 1;
     }
 }
