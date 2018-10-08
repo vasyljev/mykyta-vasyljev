@@ -917,6 +917,10 @@ footer {
 }
 
 @media only screen and  (max-width: 550px) {
+    .menu-button #drop-d-lang-menu {
+        bottom: -90px;
+        right: 0;
+    }
     #slider {
         height: 180px;
         margin-bottom: 50px;
