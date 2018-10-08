@@ -18,5 +18,21 @@ $(document).ready(function(){
 	$('#arrow-to-top-link').click(function() {
 		$('body, html').animate({scrollTop:0},800);
 	});
-
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > 100) {
+			$('.service').fadeIn().animate({right: 0, opacity: 1},600);
+		}
+		if ($(this).scrollTop() > 1000) {
+			$('.portfolio').fadeIn().animate({opacity: 1},800);
+			
+		}
+		if ($(this).scrollTop() > 2800) {
+			$('.left-anim-ti').fadeIn().animate({left: 0},800);
+			$('.right-anim-ti').fadeIn().animate({right: 0},800);
+			
+		}
+	}); 	
+	
 });
+
+
