@@ -188,10 +188,11 @@ h5 {
     height: 50px;
     position: fixed;
     right: 10px;
-    bottom: 20px;
+    bottom: 40px;
     z-index: 1000;
     background-color: #3b434c;
     border-radius: 50%;
+    box-shadow: 0 0 10px rgba(122, 201, 255, .4);
     &::after {
         content: '';
         position: absolute;
@@ -212,12 +213,12 @@ h5 {
     justify-content: space-between;
     align-items: center;
     padding: 140px 15px 100px 15px;
+    overflow: hidden;
    
 }
 
 .service {
-    display: none;
-    
+       
     position: relative;
     right: -1000px;
     opacity: 0;
@@ -665,6 +666,7 @@ label {
     justify-content: space-around;
     align-items: center;
     font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
 }
 
 .team-text {
