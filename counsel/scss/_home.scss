@@ -90,6 +90,7 @@ header {
     }
 }
 #header-top {
+    animation: header-show-anim 1s ease-out;
     width: 100%;
     margin-top: 45px;
     display: flex;
@@ -263,6 +264,7 @@ header {
 }
 
 #slider {
+    animation: slider-show-anim 2s ease-out;    
     input {
         display: none;
     }
@@ -1125,5 +1127,29 @@ footer {
         transform: scale(1.05) rotateZ(-0deg); 
         transform-origin: right top; 
         opacity: 1;
+    }
+}
+@keyframes header-show-anim {
+    0% {
+        transform: translate3d(-200%, 0, 0);
+    }
+    80% {
+        transform: translate3d(20%, 0, 0);
+    }
+    90% {
+        transform: translate3d(-30%, 0, 0);
+    }
+    100% {
+        transform: translate3d(0%, 0, 0);
+    }
+}
+@keyframes slider-show-anim {
+    0% {
+        transform: scale3d(0,0,0);
+        transform-origin: center center;
+    }
+    100% {
+        transform: scale3d(1,1,1);
+        transform-origin: center center;
     }
 }
