@@ -90,7 +90,7 @@ header {
     }
 }
 #header-top {
-    animation: header-show-anim 1s ease-out;
+    
     width: 100%;
     margin-top: 45px;
     display: flex;
@@ -263,8 +263,11 @@ header {
     }
 }
 
+
 #slider {
-    animation: slider-show-anim 2s ease-out;    
+    transform: scale3d(0,0,0);
+    transform-origin: center center;
+    transition: all 2s;
     input {
         display: none;
     }
@@ -400,6 +403,10 @@ header {
         }
     }
 }
+.animate {
+    transform: scale3d(1,1,1) !important;
+    transform-origin: center center;
+}
 
 .cntr-padding {
     padding-top: 100px;
@@ -440,6 +447,7 @@ header {
 }
 
 #graph {
+    transform: translate3d(-200%, 0, 0);
     background-color: #f4f4f4;
     .container {
         justify-content: space-between;        
@@ -533,6 +541,12 @@ header {
             }           
         }
     }
+}
+.anim-graph {
+    animation: header-show-anim 2s ease-out;
+    transform: translate3d(0%, 0, 0) !important;
+    
+    
 }
 #statistics {
     background-color: #002e5b;
@@ -743,6 +757,7 @@ footer {
         }
     }
     #graph {
+
         .container {
             .graph-img-container, .graph-content-text { 
                 width: 49%;
@@ -1134,22 +1149,10 @@ footer {
         transform: translate3d(-200%, 0, 0);
     }
     80% {
-        transform: translate3d(20%, 0, 0);
+        transform: translate3d(15%, 0, 0);
     }
-    90% {
-        transform: translate3d(-30%, 0, 0);
-    }
+    
     100% {
         transform: translate3d(0%, 0, 0);
-    }
-}
-@keyframes slider-show-anim {
-    0% {
-        transform: scale3d(0,0,0);
-        transform-origin: center center;
-    }
-    100% {
-        transform: scale3d(1,1,1);
-        transform-origin: center center;
     }
 }
