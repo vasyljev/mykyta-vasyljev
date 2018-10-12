@@ -265,13 +265,11 @@ header {
 
 
 #slider {
-<<<<<<< HEAD
-    animation: slider-show-anim 1s ease-out;    
-=======
+    animation: slider-show-anim 1s ease-out; 
     transform: scale3d(0,0,0);
     transform-origin: center center;
     transition: all 2s;
->>>>>>> 42e5176dd91e303fc3d86e557d6047f93fb4f18d
+
     input {
         display: none;
     }
