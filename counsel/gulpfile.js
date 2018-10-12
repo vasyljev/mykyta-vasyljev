@@ -25,12 +25,10 @@ gulp.task('watch', ['browser-sync'], function() {
 	gulp.watch('*.js', browserSync.reload);
 });
 
-
 gulp.task('browser-sync', function() {	
 	browserSync({						
 		server: {						
-      baseDir: './',
-      			
+      baseDir: './'      			
 		},		
 		notify: false
 	});

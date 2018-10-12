@@ -90,7 +90,7 @@ header {
     }
 }
 #header-top {
-    animation: header-show-anim 1s ease-out;
+    
     width: 100%;
     margin-top: 45px;
     display: flex;
@@ -264,7 +264,7 @@ header {
 }
 
 #slider {
-    animation: slider-show-anim 2s ease-out;    
+    animation: slider-show-anim 1s ease-out;    
     input {
         display: none;
     }
