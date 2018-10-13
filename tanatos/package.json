@@ -4,8 +4,10 @@
   "description": "Mykyta Vasyljev project",
   "main": "script.js",
   "devDependencies": {
+    "browser-sync": "^2.26.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
+    "gulp-imagemin": "^4.1.0",
     "gulp-notify": "^3.2.0",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4"

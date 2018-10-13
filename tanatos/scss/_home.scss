@@ -188,10 +188,11 @@ h5 {
     height: 50px;
     position: fixed;
     right: 10px;
-    bottom: 20px;
+    bottom: 40px;
     z-index: 1000;
     background-color: #3b434c;
     border-radius: 50%;
+    box-shadow: 0 0 10px rgba(122, 201, 255, .4);
     &::after {
         content: '';
         position: absolute;
@@ -212,12 +213,12 @@ h5 {
     justify-content: space-between;
     align-items: center;
     padding: 140px 15px 100px 15px;
+    overflow: hidden;
    
 }
 
 .service {
-    display: flex;
-    
+       
     position: relative;
     right: -1000px;
     opacity: 0;
@@ -353,6 +354,7 @@ h5 {
 }
 
 .portfolio {
+    opacity: 0;
     width: 100%; height: auto;
     display: flex;
     flex-wrap: wrap;    
@@ -664,6 +666,7 @@ label {
     justify-content: space-around;
     align-items: center;
     font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
 }
 
 .team-text {
@@ -680,6 +683,16 @@ label {
 
 .our-team  p {
     line-height: 30px;
+}
+
+.left-anim-ti {
+    position: relative;
+    left: -1000px;
+}
+
+.right-anim-ti {
+    position: relative;
+    right: -1000px;
 }
 
 .team-block {
@@ -950,7 +963,8 @@ input:focus::placeholder, textarea:focus::placeholder {
 
 @media only screen and (max-width: 1180px) {
     header {
-        height: 600px;
+        height: 100vh;
+
      }
      header>.container {
         padding-bottom: 30px;
@@ -1124,17 +1138,19 @@ input:focus::placeholder, textarea:focus::placeholder {
     }
 }
 
-@media only screen and (max-width: 655px) {
+@media only screen and (max-width: 730px) {
     header h1 {
-        font-size: 50px;
+        font-size: 40px;
+        line-height: 60px;
     }
 
     header h5 {
         font-size: 16px;
-        line-height: 30px;
+        line-height: 25px;
     }
     .header-buttons-block {
         width: 100%;
+        margin-top: 2vh;
     }
     #logo {
         padding-left: 5px;
@@ -1215,10 +1231,12 @@ input:focus::placeholder, textarea:focus::placeholder {
     }
 }
 
-@media only screen and (max-width: 381px) {
+@media only screen and (max-width: 381px) {  
     header {
-        height: 100%;
-     }
+        .container {
+            align-content: normal;
+        }
+    } 
      .container {        
         padding: 15px 10px;
      }
@@ -1262,6 +1280,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 
      .midle-header {
          margin: 15px 0;
+        
      }
     header h1 {
         font-size: 30px;
@@ -1278,11 +1297,10 @@ input:focus::placeholder, textarea:focus::placeholder {
     .header-button {
         font-size: 14px;
     }
-    .circle-arrow-down {
-        display: none;
-    }
+    
     #menu{
         justify-content: flex-end;
+        align-items: flex-start;
     }
 
     #menu p {
