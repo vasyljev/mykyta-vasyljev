@@ -65,6 +65,7 @@ h5 {
     &:hover {
         color: #fde428;
         border-bottom: 2px solid #fde428;
+        transition: all .3s ease-out;
     }
 }
 
@@ -89,6 +90,7 @@ header {
     }
 }
 #header-top {
+    
     width: 100%;
     margin-top: 45px;
     display: flex;
@@ -117,7 +119,7 @@ header {
         justify-content: space-between; 
         align-items: center;
         width: 670px;
-        position: relative;
+        position: relative;        
         a {
             text-transform: uppercase;
             text-decoration: none;
@@ -125,14 +127,12 @@ header {
             color: white;
             &:hover {
                 color: #fde428;
+                transition: all .3s ease-out;
+                
+                
             }
         }
-        #language {
-            display: none;
-            &:checked ~ #lang-menu {
-                display: block;
-            }
-        }
+        
         #language-label {
             // display: none;
             position: relative;
@@ -157,10 +157,19 @@ header {
             display: none;
             position: absolute;
             top: 35px;
-            right: 15px;
-            display: flex;
+            right: 15px;            
             flex-direction: column;
+            &:hover {
+                animation: rotate-anim .5s ease-out;
+            }
 
+        }
+        #language {
+            display: none;
+            &:checked ~ #lang-menu {
+                display: flex;
+                animation: rotate-anim .5s ease-in;
+            }
         }
         .flag {
             width: 35px;
@@ -185,6 +194,7 @@ header {
         display: none;
         &:checked ~ #drop-down-menu {
             display: flex;
+            animation: drop-down-anim .3s ease-out;
         }                
     }
 
@@ -215,7 +225,7 @@ header {
             border-top: 1px solid #24629d;
             border-bottom: 1px solid #24629d;
             &:hover {
-                animation: anim-menu-item .3s ease-out;
+                animation: anim-menu-item .3s cubic-bezier(.43, .57, .52, 1);
                 background: linear-gradient(to right, rgba(50, 125, 198, .9) 0%, rgba(50, 125, 198, 1),rgba(50, 125, 198, .9) 100%);               
                 // transition: all .5s;
             }
@@ -225,6 +235,7 @@ header {
         display: none;
         &:checked ~ #drop-d-lang-menu {
             display: block;
+            animation: drop-down-anim .3s ease-out;
         }
     }
     #drop-down-language-label {
@@ -239,18 +250,26 @@ header {
         border-top: 1px solid #24629d;
         border-bottom: 1px solid #24629d;                
         cursor: pointer;
-       
+        &:hover {
+            animation: anim-menu-item .3s cubic-bezier(.43, .57, .52, 1);
+            background: linear-gradient(to right, rgba(50, 125, 198, .9) 0%, rgba(50, 125, 198, 1),rgba(50, 125, 198, .9) 100%);
+        }
     }
     #drop-d-lang-menu {
         display: none;
         position: absolute;
         right: 200px;
         bottom: -50px;
-        
     }
 }
 
+
 #slider {
+    animation: slider-show-anim 1s ease-out; 
+    transform: scale3d(0,0,0);
+    transform-origin: center center;
+    transition: all 2s;
+
     input {
         display: none;
     }
@@ -275,15 +294,15 @@ header {
     }
     #slide-1:checked ~ .overflow>.slides {
         margin-left: 0;
-        transition: all .5s ease-in-out;
+        transition: all .5s cubic-bezier(.96, 0, .58, 1);
     }
     #slide-2:checked ~ .overflow>.slides {
         margin-left: -100%;
-        transition: all .5s ease-in-out;
+        transition: all .5s cubic-bezier(.96, 0, .58, 1);
     }
     #slide-3:checked ~ .overflow>.slides {
         margin-left: -200%;
-        transition: all .5s ease-in-out;
+        transition: all .5s cubic-bezier(.96, 0, .58, 1);
     }
     
     #slide-1:checked ~ .slider-nav>label:nth-child(2),
@@ -380,16 +399,16 @@ header {
             color: #fde428;
             &:hover {
                 color: white;
+                transition: all .3s ease-out;
+                
             }
         }
     }
 }
-
-
-
-
-
-
+.animate {
+    transform: scale3d(1,1,1) !important;
+    transform-origin: center center;
+}
 
 .cntr-padding {
     padding-top: 100px;
@@ -430,6 +449,7 @@ header {
 }
 
 #graph {
+    transform: translate3d(-200%, 0, 0);
     background-color: #f4f4f4;
     .container {
         justify-content: space-between;        
@@ -524,6 +544,15 @@ header {
         }
     }
 }
+.anim-service-img {
+    animation: rotate-scale-block 1s ease-in;
+}
+.anim-graph {
+    animation: header-show-anim 2s ease-out;
+    transform: translate3d(0%, 0, 0) !important;
+    
+    
+}
 #statistics {
     background-color: #002e5b;
     .container {
@@ -588,7 +617,8 @@ header {
             border-bottom: 2px solid #002e5b;
             &:hover {
                 color: #fde52c;
-                border-bottom: 2px solid #fde52c;
+                border-bottom: 2px solid #fde52c;      
+                transition: all .3s ease-out;         
             }
         }
     }
@@ -732,6 +762,7 @@ footer {
         }
     }
     #graph {
+
         .container {
             .graph-img-container, .graph-content-text { 
                 width: 49%;
@@ -908,6 +939,10 @@ footer {
 }
 
 @media only screen and  (max-width: 550px) {
+    .menu-button #drop-d-lang-menu {
+        bottom: -90px;
+        right: 0;
+    }
     #slider {
         height: 180px;
         margin-bottom: 50px;
@@ -1052,32 +1087,33 @@ footer {
     45% {
         background: linear-gradient(to right, rgba(50, 125, 198, .4) 12%, rgba(50, 125, 198, .8) 50%,rgba(50, 125, 198, .4) 88%);
     }
+    // !!!
     50% {
         background: linear-gradient(to right, rgba(50, 125, 198, .4) 10%, rgba(50, 125, 198, .8) 50%,rgba(50, 125, 198, .4) 90%);
     }
     55% {
-        background: linear-gradient(to right, rgba(50, 125, 198, .4) 8%, rgba(50, 125, 198, .8) 50%,rgba(50, 125, 198, .4) 92%);
+        background: linear-gradient(to right, rgba(50, 125, 198, .4) 9%, rgba(50, 125, 198, .8) 50%,rgba(50, 125, 198, .4) 91%);
     }
     60% {
-        background: linear-gradient(to right, rgba(50, 125, 198, .4) 6%, rgba(50, 125, 198, .8) 50%,rgba(50, 125, 198, .4) 94%);
+        background: linear-gradient(to right, rgba(50, 125, 198, .5) 8%, rgba(50, 125, 198, .8) 50%,rgba(50, 125, 198, .5) 92%);
     }
     65% {
-        background: linear-gradient(to right, rgba(50, 125, 198, .4) 5%, rgba(50, 125, 198, .8) 50%,rgba(50, 125, 198, .4) 95%);
+        background: linear-gradient(to right, rgba(50, 125, 198, .5) 7%, rgba(50, 125, 198, .8) 50%,rgba(50, 125, 198, .5) 93%);
     }
     70% {
-        background: linear-gradient(to right, rgba(50, 125, 198, .4) 4%, rgba(50, 125, 198, .8) 50%,rgba(50, 125, 198, .4) 96%);
+        background: linear-gradient(to right, rgba(50, 125, 198, .6) 6%, rgba(50, 125, 198, .8) 50%,rgba(50, 125, 198, .6) 94%);
     }
     75% {
-        background: linear-gradient(to right, rgba(50, 125, 198, .5) 3%, rgba(50, 125, 198, .8) 50%,rgba(50, 125, 198, .5) 97%);
+        background: linear-gradient(to right, rgba(50, 125, 198, .6) 5%, rgba(50, 125, 198, .8) 50%,rgba(50, 125, 198, .6) 95%);
     }
     80% {
-        background: linear-gradient(to right, rgba(50, 125, 198, .5) 2%, rgba(50, 125, 198, .9) 50%,rgba(50, 125, 198, .5) 98%);
+        background: linear-gradient(to right, rgba(50, 125, 198, .7) 4%, rgba(50, 125, 198, .9) 50%,rgba(50, 125, 198, .7) 96%);
     }
     85% {
-        background: linear-gradient(to right, rgba(50, 125, 198, .6) 1%, rgba(50, 125, 198, .9) 50%,rgba(50, 125, 198, .6) 99%);
+        background: linear-gradient(to right, rgba(50, 125, 198, .7) 3%, rgba(50, 125, 198, .9) 50%,rgba(50, 125, 198, .7) 97%);
     }
     90% {
-        background: linear-gradient(to right, rgba(50, 125, 198, .7) 1%, rgba(50, 125, 198, 1) 50%,rgba(50, 125, 198, .7) 99%);
+        background: linear-gradient(to right, rgba(50, 125, 198, .8) 2%, rgba(50, 125, 198, 1) 50%,rgba(50, 125, 198, .8) 98%);
     }
     95% {
         background: linear-gradient(to right, rgba(50, 125, 198, .8) 1%, rgba(50, 125, 198, 1) 50%,rgba(50, 125, 198, .8) 99%);
@@ -1087,4 +1123,53 @@ footer {
         background: linear-gradient(to right, rgba(50, 125, 198, .9) 0%, rgba(50, 125, 198, 1) 50%,rgba(50, 125, 198, .9) 100%);
     }
 
+}
+
+@keyframes rotate-anim {
+    0% {
+        transform: rotateX(-180deg); 
+        transform-origin: center top; 
+        opacity: 0;   
+    }    
+    100% {
+        transform: rotateX(0deg); 
+        transform-origin: center top; 
+        opacity: 1; 
+    }
+}
+@keyframes drop-down-anim {
+    0% {
+        transform: scale(0) rotateZ(-180deg); 
+        transform-origin: right top; 
+        opacity: 0;   
+    }
+    100% {
+        transform: scale(1.05) rotateZ(-0deg); 
+        transform-origin: right top; 
+        opacity: 1;
+    }
+}
+@keyframes header-show-anim {
+    0% {
+        transform: translate3d(-200%, 0, 0);
+    }
+    80% {
+        transform: translate3d(15%, 0, 0);
+    }
+    
+    100% {
+        transform: translate3d(0%, 0, 0);
+    }
+}
+@keyframes rotate-scale-block {
+    0% {
+        transform: rotateZ(0deg) scale3d(1, 1, 1);
+
+    }
+    50% {
+        transform: rotateZ() scale3d(1, 1.3, 1);
+    }
+    100% {
+        transform: rotateZ(360deg) scale3d(1, 1, 1);
+    }
 }

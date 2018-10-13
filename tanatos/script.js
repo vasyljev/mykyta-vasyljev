@@ -46,6 +46,7 @@ if ($(this).width() > 940) {
 	$('#arrow-to-top-link').click(function() {
 		$('body, html').animate({scrollTop:0},800);
 	});
+<<<<<<< HEAD
 	var index = -1
 	var $div = $('.team-block .team-av')
 
@@ -54,6 +55,8 @@ if ($(this).width() > 940) {
   		index = (index + 1) % $div.length
   		$div.eq(index).addClass('team-av-active')
 	}, 2000)
+=======
+>>>>>>> fb355d6eb2a38403a9f56023d1cb40f85f3cbac8
 	
 });
 
