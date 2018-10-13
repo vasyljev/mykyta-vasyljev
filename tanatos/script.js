@@ -46,6 +46,14 @@ if ($(this).width() > 940) {
 	$('#arrow-to-top-link').click(function() {
 		$('body, html').animate({scrollTop:0},800);
 	});
+	var index = -1
+	var $div = $('.team-block .team-av')
+
+	setInterval(function() {
+  		$div.eq(index).removeClass('team-av-active')
+  		index = (index + 1) % $div.length
+  		$div.eq(index).addClass('team-av-active')
+	}, 2000)
 	
 });
 

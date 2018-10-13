@@ -719,26 +719,43 @@ label {
     filter: grayscale(100%);
 }
 
-[class^="team-avatar"]:hover {
+// [class^="team-avatar"]:hover {
+//     transform: scale3d(1.1, 1.1, 1.1) translate(0, -10px);   
+//     filter: none;
+//     animation: scale-filter .3s linear;   
+//     position: relative;
+// }
+.team-av-active {
     transform: scale3d(1.1, 1.1, 1.1) translate(0, -10px);   
     filter: none;
     animation: scale-filter .3s linear;   
     position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0; bottom:  0;
+        height: 6px; 
+        width: 100%;
+        background: #f7600e;
+        border-radius: 30px;    
+        animation: growth .3s linear;
+    }
+    
 }
 [class^="team-avatar"]:not(:hover) {
     transition: .4s;
   }
 
-[class^="team-avatar"]:hover::after {
-    content: '';
-    position: absolute;
-    left: 0; bottom:  0;
-    height: 6px; 
-    width: 100%;
-    background: #f7600e;
-    border-radius: 30px;    
-    animation: growth .3s linear;
-}
+// [class^="team-avatar"]:hover::after {
+//     content: '';
+//     position: absolute;
+//     left: 0; bottom:  0;
+//     height: 6px; 
+//     width: 100%;
+//     background: #f7600e;
+//     border-radius: 30px;    
+//     animation: growth .3s linear;
+// }
 
 
 .team-avatar-1 {
@@ -923,6 +940,13 @@ label {
     width: 295px;
     display: flex;
     justify-content: space-between;
+}
+.social-box-big a:hover img {
+    transform: scale3d(1.2, 1.2, 1.2);
+    transition: .2s linear;
+}
+.social-box-big a:not(:hover) img {
+    transition: .2s linear;
 }
 
 footer {
