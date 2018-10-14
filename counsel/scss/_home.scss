@@ -246,7 +246,7 @@ header {
         text-decoration: none;
         justify-content: center;
         align-items: center;
-        background: linear-gradient(to right, rgba(50, 125, 198, .4), rgba(50, 125, 198, .8),rgba(50, 125, 198, .4));
+        background: linear-gradient(to right, rgba(50, 125, 198, .5), rgba(50, 125, 198, .8),rgba(50, 125, 198, .5));
         border-top: 1px solid #24629d;
         border-bottom: 1px solid #24629d;                
         cursor: pointer;
@@ -548,7 +548,7 @@ header {
     animation: rotate-scale-block 1s ease-in;
 }
 .anim-graph {
-    animation: header-show-anim 2s ease-out;
+    animation: header-show-anim 1.5s ease-out;
     transform: translate3d(0%, 0, 0) !important;
     
     
