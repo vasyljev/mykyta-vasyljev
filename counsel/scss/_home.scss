@@ -226,8 +226,7 @@ header {
             border-bottom: 1px solid #24629d;
             &:hover {
                 animation: anim-menu-item .3s cubic-bezier(.43, .57, .52, 1);
-                background: linear-gradient(to right, rgba(50, 125, 198, .9) 0%, rgba(50, 125, 198, 1),rgba(50, 125, 198, .9) 100%);               
-                // transition: all .5s;
+                background: linear-gradient(to right, rgba(50, 125, 198, .9) 0%, rgba(50, 125, 198, 1),rgba(50, 125, 198, .9) 100%); 
             }
         }
     }
@@ -268,7 +267,7 @@ header {
     animation: slider-show-anim 1s ease-out; 
     transform: scale3d(0,0,0);
     transform-origin: center center;
-    transition: all 2s;
+    transition: all 1.5s;
 
     input {
         display: none;
