@@ -54,7 +54,31 @@ if ($(this).width() > 940) {
   		index = (index + 1) % $div.length
   		$div.eq(index).addClass('team-av-active')
 	}, 2000)
+	var inputBox = document.getElementById('email-imp');
+
+	var button = document.getElementById('subscribe-btn');
+		
+	button.addEventListener('click', openWindow, false);
+	var newWindow = document.createElement('div');
 	
-});
-
-
+	function openWindow() {			
+		if(inputBox.value == '')	{
+			newWindow.innerHTML = '<div id="new-window"><div id="inner-block"><p>Field is empty!</p><div id="ok-button">ok</div></div></div>';
+			document.body.appendChild(newWindow);		
+			newWindow.addEventListener('click', closeWindow, false);
+			console.log(inputBox.value);
+			event.preventDefault();
+		}				
+	}
+	function closeWindow() {
+		var newOpenWindow = document.getElementById('new-window');
+		var okButton = document.getElementById('ok-button');
+		var clickTarget = getTarget(event);
+		if(clickTarget == okButton || clickTarget == newOpenWindow) {
+			document.body.removeChild(newWindow);
+		}		
+	}
+	function getTarget(e) {
+		return e.target;
+	}
+})	
