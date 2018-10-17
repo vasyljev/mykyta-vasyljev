@@ -54,10 +54,9 @@ if ($(this).width() > 940) {
   		index = (index + 1) % $div.length
   		$div.eq(index).addClass('team-av-active')
 	}, 2000)
-	var inputBox = document.getElementById('email-imp');
 
-	var button = document.getElementById('subscribe-btn');
-		
+	var inputBox = document.getElementById('email-imp');
+	var button = document.getElementById('subscribe-btn');	
 	button.addEventListener('click', openWindow, false);
 	var newWindow = document.createElement('div');
 	
@@ -70,6 +69,7 @@ if ($(this).width() > 940) {
 			event.preventDefault();
 		}				
 	}
+
 	function closeWindow() {
 		var newOpenWindow = document.getElementById('new-window');
 		var okButton = document.getElementById('ok-button');
@@ -78,6 +78,7 @@ if ($(this).width() > 940) {
 			document.body.removeChild(newWindow);
 		}		
 	}
+	
 	function getTarget(e) {
 		return e.target;
 	}
