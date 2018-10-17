@@ -288,6 +288,11 @@ h5 {
     align-items: center;
 }
 
+form {
+    width: 100%;
+    display: flex;
+}
+
 #email-imp {
     width: 560px; height: 50px;
     border-radius: 8px;
@@ -298,11 +303,60 @@ h5 {
     margin: 14px;
 }
 
+ #inner-block {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    p {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+   
+}
+#new-window {    
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0,0,0,0.6);
+}
+#ok-button {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    background: #f9884a;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
 #subscribe-btn {
     width: 268px; height: 50px;
     font-weight: 600;
     color: white;
     background: #f7600e;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 8px;
     margin: 14px;
     border: none;
@@ -1102,10 +1156,12 @@ input:focus::placeholder, textarea:focus::placeholder {
     }
     form {
         width: 100%;
+        display: flex;
     }
 
     .input-form {
         width: 100%;
+        
     }
     #email-imp {
         width: 60%;
