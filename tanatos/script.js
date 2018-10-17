@@ -69,7 +69,7 @@ if ($(this).width() > 940) {
 	
 	function openWindow() {			
 		if(inputBox.value == '')	{
-			newWindow.innerHTML = '<div id="new-window"><div id="inner-block"><p>Field is empty!</p><div id="ok-button">ok</div></div></div>';
+			newWindow.innerHTML = '<div id="new-window"><div id="inner-block"><p>Field is empty!</p><p>Please, enter your E-Mail!</p><div id="ok-button">ok</div></div></div>';
 			document.body.appendChild(newWindow);		
 			newWindow.addEventListener('click', closeWindow, false);
 			console.log(inputBox.value);
