@@ -4,17 +4,21 @@ $('.scroll_to').click(function(e){
        $('html, body').stop().animate({ scrollTop: new_position.top }, 800);
        e.preventDefault();
 	});
-$('#arrow-to-top-link').click(function() {
-	$('body, html').animate({scrollTop:0},600);
-	// $('#arrow-to-top-link').animate({opacity:0},600);
-});
-if($(window).scrollTop() > 100) {
-	$('#arrow-to-top-link').animate({opacity:1},600);
-} else {
-	$('#arrow-to-top-link').animate({opacity:0},600);
-}
+
+
 
 $(document).ready(function(){
+	$(window).scroll(function() {
+		if($(this).scrollTop() != 0) {
+			$('#arrow-to-top-link').fadeIn();
+		} else {
+			$('#arrow-to-top-link').fadeOut();
+		}
+	});
+	
+	$('#arrow-to-top-link').click(function() {
+		$('body, html').animate({scrollTop:0},800);
+	});
 	var firstAnimHeight;
 	var secondAnimHeight;
 	var thirdAnimHeight;
@@ -105,7 +109,8 @@ if ($(this).width() > 940) {
 			} else {
 				var portfolioBlock = document.getElementsByClassName('portfolio');				
 				var portfolioBlockParent = portfolioBlock[0].parentNode;				
-				var portfolioBlockNew = document.createElement('div');				
+				var portfolioBlockNew = document.createElement('div');
+				portfolioBlockNew.setAttribute('class', 'portfolio');				
 				portfolioBlockNew.innerHTML = xhr.responseText;
 				portfolioBlockParent.insertBefore(portfolioBlockNew, showPortfolioBtn);
 			}
