@@ -92,27 +92,25 @@ if ($(this).width() > 940) {
 	var showPortfolioBtn = document.getElementById('show-portfolio-btn');
 	showPortfolioBtn.addEventListener('click', sendRequest, false);
 	function sendRequest() {
-			
+		event.preventDefault();	
 		var xhr = new XMLHttpRequest();
 		xhr.open('GET', 'ajax/portfolio.html', true);
 		xhr.onreadystatechange = function() {
 			console.log(xhr.readyState + " получено символов:" + xhr.responseText.length);
-		};
-		console.log(xhr.responseText);
-		xhr.send(null);
-		console.log(xhr.responseText);
-		if(xhr.status != 200) {
-			alert('ERROR! ' + xhr.status + xhr.statusText);
-		} else {
-			var portfolioBlock = document.getElementsByClassName('portfolio');
-			
-			var portfolioBlockParent = portfolioBlock[0].parentNode;
-			
-			var portfolioBlockNew = document.createElement('div');
-			console.log(xhr.responseText);
-			portfolioBlockNew.innerHTML = xhr.responseText;
-			portfolioBlockParent.appendChild(portfolioBlockNew);
-	}
-	event.preventDefault();	
+		};		
+		xhr.send(null);		
+		xhr.onload = function () {
+			if(xhr.status != 200) {
+				alert('ERROR! ' + xhr.status + xhr.statusText);
+			} else {
+				var portfolioBlock = document.getElementsByClassName('portfolio');				
+				var portfolioBlockParent = portfolioBlock[0].parentNode;				
+				var portfolioBlockNew = document.createElement('div');				
+				portfolioBlockNew.innerHTML = xhr.responseText;
+				portfolioBlockParent.insertBefore(portfolioBlockNew, showPortfolioBtn);
+			}
+				
+		}
+		
 }
 });	
