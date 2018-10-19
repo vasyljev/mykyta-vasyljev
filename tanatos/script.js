@@ -109,7 +109,9 @@ if ($(this).width() > 940) {
 				xhr.open('GET', jsonValue, true);
 				xhr.send(null);
 				xhr.onload = ajaxOnLoad;
-				portfolioBlock[0].classList.add('portfolio-small');				
+				portfolioBlock[0].classList.add('portfolio-small');
+				var new_position = $('#our-works-link').offset();
+				$('html, body').stop().animate({ scrollTop: new_position.top }, 400);				
 		}	
 		if(target == portfolioButton1) {			
 			jsonValue = 'ajax/portfolio-1.json';

@@ -591,6 +591,7 @@ show-more-btn:not(:hover) {
     animation: portfolio-small-anim .5s ease;
     transform: scaleY(.2);
     height: 150px;
+    transition: height .5s ease;
 }
 
 // SLIDER!!!!!!!!!
