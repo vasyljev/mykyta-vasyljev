@@ -46,7 +46,7 @@ if ($(this).width() > 940) {
 			$('.service').fadeIn().animate({right: 0, opacity: 1},600);
 		}
 		if ($(this).scrollTop() > secondAnimHeight) {
-			$('.portfolio').fadeIn().animate({opacity: 1},800);
+			$('.portfolio').fadeIn().animate({opacity: 1, bottom: 0},800);
 			
 		}
 		if ($(this).scrollTop() > thirdAnimHeight) {
@@ -109,8 +109,7 @@ if ($(this).width() > 940) {
 				xhr.open('GET', jsonValue, true);
 				xhr.send(null);
 				xhr.onload = ajaxOnLoad;
-				portfolioBlock[0].classList.add('portfolio-small');
-				// addAttribute('class', 'portfolio-small');
+				portfolioBlock[0].classList.add('portfolio-small');				
 		}	
 		if(target == portfolioButton1) {			
 			jsonValue = 'ajax/portfolio-1.json';
