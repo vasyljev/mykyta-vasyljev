@@ -586,7 +586,7 @@ show-more-btn:not(:hover) {
 }
 .portfolio-small {
     animation: portfolio-small-anim .5s ease;
-    transform: scaleY(.5);
+    transform: scaleY(.2);
 }
 
 // SLIDER!!!!!!!!!
@@ -1166,6 +1166,24 @@ input:focus::placeholder, textarea:focus::placeholder {
     }
     .porfolio-after > a {        
         width: 80%; 
+    }
+
+    #portfolio-img-description {
+        width: 90%;
+        flex-direction: column-reverse;
+        align-items: center;
+        
+        .left-side {
+            width: 90%;           
+        }
+        img {
+            border-radius: 10%;
+            max-width: 70%;
+        }
+        p {
+            text-align: justify;
+        }
+        
     }
 
     .team-block {
