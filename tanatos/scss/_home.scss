@@ -8,8 +8,6 @@ input, textarea, button {
     font-size: 14px;
 }
 
-
-
 header {
     width: 100%; height: 800px;
     background: url('../img/header_background.jpg') right top no-repeat;
@@ -415,6 +413,7 @@ form {
     flex-wrap: wrap;    
     align-content: center;
     margin: 100px 0;
+    transition: transform .5s ease;
 }
 
 .portfolio > .portfolio-img {
@@ -542,6 +541,47 @@ form {
 }
 show-more-btn:not(:hover) {
     transition: all .3s;
+}
+
+#portfolio-img-description {
+    animation: portfolio-show-anim .5s ease;
+    position: absolute;
+    margin-top: 15px;
+    z-index: 200;
+    background: white;
+    width: 98%;
+    display: flex;    
+    justify-content: space-between;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    border-radius: 20px;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    
+    .left-side {
+        width: 49%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        
+    }
+    img {
+        border-radius: 10%;
+    }
+    #close-portfolio-description {
+        align-self: flex-end;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        &:hover {
+            filter: brightness(200%);
+            transform: scale(1.1);
+        }
+    }
+}
+.portfolio-small {
+    animation: portfolio-small-anim .5s ease;
+    transform: scaleY(.5);
 }
 
 // SLIDER!!!!!!!!!
@@ -1569,5 +1609,25 @@ input:focus::placeholder, textarea:focus::placeholder {
     100% {
         transform: translate(0%,0%);
         opacity: 1;
+    }
+}
+@keyframes portfolio-show-anim {
+    0% {
+        transform: translate3d(-200%, 0, 0);
+    }
+    80% {
+        transform: translate3d(15%, 0, 0);
+    }
+    
+    100% {
+        transform: translate3d(0%, 0, 0);
+    }
+}
+@keyframes portfolio-small-anim {
+    0% {
+        transform: scaleY(1);
+    }
+    100% {
+        transform: scaleY(.2);
     }
 }

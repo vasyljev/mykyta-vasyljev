@@ -88,34 +88,69 @@ if ($(this).width() > 940) {
 		if(clickTarget == okButton || clickTarget == newOpenWindow) {
 			document.body.removeChild(newWindow);
 		}		
-	}
-	
+	}	
 	function getTarget(e) {
 		return e.target;
 	}
-	var showPortfolioBtn = document.getElementById('show-portfolio-btn');
-	showPortfolioBtn.addEventListener('click', sendRequest, false);
-	function sendRequest() {
-		event.preventDefault();	
+	var portfolioButton1 = document.getElementById('portfolio-btn-1');
+	var portfolioButton2 = document.getElementById('portfolio-btn-2');
+	var portfolioButton3 = document.getElementById('portfolio-btn-3');
+	var portfolioButton4 = document.getElementById('portfolio-btn-4');
+	var portfolioButton5 = document.getElementById('portfolio-btn-5');
+	var portfolioButton6 = document.getElementById('portfolio-btn-6');
+	var portfolioBlock = document.getElementsByClassName('portfolio');
+	portfolioBlock[0].addEventListener('click', showPotfolioDescription, false);
+	function showPotfolioDescription() {
+		var target = getTarget(event);
 		var xhr = new XMLHttpRequest();
-		xhr.open('GET', 'ajax/portfolio.html', true);
-		xhr.onreadystatechange = function() {
-			console.log(xhr.readyState + " получено символов:" + xhr.responseText.length);
-		};		
-		xhr.send(null);		
-		xhr.onload = function () {
+		var jsonValue;	
+		function buildBlock() {			
+				event.preventDefault();			
+				xhr.open('GET', jsonValue, true);
+				xhr.send(null);
+				xhr.onload = ajaxOnLoad;
+				portfolioBlock[0].classList.add('portfolio-small');
+				// addAttribute('class', 'portfolio-small');
+		}	
+		if(target == portfolioButton1) {			
+			jsonValue = 'ajax/portfolio-1.json';
+			buildBlock();
+		} else if (target == portfolioButton2) {			
+			jsonValue = 'ajax/portfolio-2.json';
+			buildBlock();
+		} else if (target == portfolioButton3) {			
+			jsonValue = 'ajax/portfolio-3.json';
+			buildBlock();
+		} else if (target == portfolioButton4) {			
+			jsonValue = 'ajax/portfolio-4.json';
+			buildBlock();
+		} else if (target == portfolioButton5) {			
+			jsonValue = 'ajax/portfolio-5.json';
+			buildBlock();
+		} else if (target == portfolioButton6) {			
+			jsonValue = 'ajax/portfolio-6.json';
+			buildBlock();
+		}
+		
+		function ajaxOnLoad() {
 			if(xhr.status != 200) {
 				alert('ERROR! ' + xhr.status + xhr.statusText);
 			} else {
-				var portfolioBlock = document.getElementsByClassName('portfolio');				
-				var portfolioBlockParent = portfolioBlock[0].parentNode;				
-				var portfolioBlockNew = document.createElement('div');
-				portfolioBlockNew.setAttribute('class', 'portfolio');				
-				portfolioBlockNew.innerHTML = xhr.responseText;
-				portfolioBlockParent.insertBefore(portfolioBlockNew, showPortfolioBtn);
-			}
+				var portfolioDescriptionObject = JSON.parse(xhr.responseText);
+				var portfolioDescriptionText = '<img src="' + portfolioDescriptionObject.adress +'" alt="IMG-1"><div class="left-side"><img src="img/close-field.png" alt="Close" id="close-portfolio-description"><div class="portfolio-content">'+ portfolioDescriptionObject.content +'</div></div></div>'
+				var portfolioDescriptionHtml = document.createElement('div');
+				portfolioDescriptionHtml.setAttribute('id', 'portfolio-img-description');
+				portfolioDescriptionHtml.innerHTML = portfolioDescriptionText;
+				var portfolioBlockParent = portfolioBlock[0].parentNode;
+				portfolioBlockParent.insertBefore(portfolioDescriptionHtml, portfolioBlock[0]);
+				var closePortfolioButton = document.getElementById('close-portfolio-description');
+				closePortfolioButton.addEventListener('click', function() {
+					portfolioBlockParent.removeChild(portfolioDescriptionHtml);
+					portfolioBlock[0].classList.remove('portfolio-small');
+				}, false);
 				
+			} 
 		}
-		
 	}
+
 });	
