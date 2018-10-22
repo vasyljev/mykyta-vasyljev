@@ -151,8 +151,7 @@ if ($(this).width() > 940) {
 						portfolioBlockParent.removeChild(portfolioDescriptionHtml);
 					}, 700);					
 					portfolioBlock[0].classList.remove('portfolio-small');
-				}, false);
-				
+				}, false);				
 			} 
 		}
 	}	
