@@ -146,12 +146,14 @@ if ($(this).width() > 940) {
 				portfolioBlockParent.insertBefore(portfolioDescriptionHtml, portfolioBlock[0]);
 				var closePortfolioButton = document.getElementById('close-portfolio-description');
 				closePortfolioButton.addEventListener('click', function() {
-					portfolioBlockParent.removeChild(portfolioDescriptionHtml);
+					portfolioDescriptionHtml.classList.add('portfolio-hide');
+					setTimeout(function() {
+						portfolioBlockParent.removeChild(portfolioDescriptionHtml);
+					}, 700);					
 					portfolioBlock[0].classList.remove('portfolio-small');
 				}, false);
 				
 			} 
 		}
-	}
-
+	}	
 });	
