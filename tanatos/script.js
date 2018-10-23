@@ -1,13 +1,10 @@
-$('.scroll_to').click(function(e){
+$(document).ready(function(){
+	$('.scroll_to').click(function(e){
         var jump = $(this).attr('href');
         var new_position = $(jump).offset();
        $('html, body').stop().animate({ scrollTop: new_position.top }, 800);
        e.preventDefault();
 	});
-
-
-
-$(document).ready(function(){
 	$(window).scroll(function() {
 		if($(this).scrollTop() != 0) {
 			$('#arrow-to-top-link').fadeIn();
@@ -23,19 +20,19 @@ $(document).ready(function(){
 	var secondAnimHeight;
 	var thirdAnimHeight;
 
-if ($(this).width() > 940) {
-	firstAnimHeight = 100;
-	secondAnimHeight = 1100;
-	thirdAnimHeight = 2800;
-} if (($(this).width() < 940)&&($(this).width() > 720)) {
-	firstAnimHeight = 150;
-	secondAnimHeight = 1000;
-	thirdAnimHeight = 2700;
-} else if ($(this).width() < 720)  {
-	firstAnimHeight = 300;
-	secondAnimHeight = 1500;
-	thirdAnimHeight = 3800;
-}
+	if ($(this).width() > 940) {
+		firstAnimHeight = 100;
+		secondAnimHeight = 1100;
+		thirdAnimHeight = 2800;
+	} if (($(this).width() < 940)&&($(this).width() > 720)) {
+		firstAnimHeight = 150;
+		secondAnimHeight = 1000;
+		thirdAnimHeight = 2700;
+	} else if ($(this).width() < 720)  {
+		firstAnimHeight = 300;
+		secondAnimHeight = 1500;
+		thirdAnimHeight = 3800;
+	}
 	$(window).scroll(function() {
 		if($(this).scrollTop() != 0) {
 			$('#arrow-to-top-link').fadeIn();
@@ -55,7 +52,6 @@ if ($(this).width() > 940) {
 			
 		}
 	});
-
 	
 	var index = -1
 	var $div = $('.team-block .team-av')
@@ -154,5 +150,25 @@ if ($(this).width() > 940) {
 				}, false);				
 			} 
 		}
-	}	
+	}
+	
+	var headerTag = document.getElementsByTagName('header');
+	var headerBackground = document.getElementById('header-background');
+	headerTag[0].addEventListener('mouseover', function() {
+		return scaleBackground(headerBackground);
+	}, false);
+	
+	var newsletterSection = document.getElementsByClassName('newsletter');
+	var newsletterBackground = document.getElementById('newsletter-background');
+	newsletterSection[0].addEventListener('mouseover', function() {
+		return scaleBackground(newsletterBackground);
+	}, false);
+
+	function scaleBackground(attr) {
+		attr.style = 'transform: scale3d(1.6,1.6,1.6); transform-origin: center bottom;'
+		this.addEventListener('mouseout', function() {
+			attr.style = 'transform: scale3d(1,1,1); transform-origin: center bottom;'
+		}, false);
+		}		 
+	
 });	
