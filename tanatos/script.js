@@ -170,10 +170,10 @@ $(document).ready(function(){
 	}, false);
 
 	function scaleBackground(attr, mainAttr) {
-		attr.style = 'transform: scale3d(1.3,1.3,1.3);';		
+		attr.style = '-webkit-transform: scale3d(1.3,1.3,1.3); transform: scale3d(1.3,1.3,1.3);';		
 		mainAttr.addEventListener('mousemove', function() {
 			var mousePositionX =100 - event.clientX*0.05, mousePositionY = 100 - event.clientY*0.05;
-			attr.style = 'transform: scale3d(1.3,1.3,1.3); transform-origin:'+ mousePositionX + '% ' + mousePositionY + '%;';
+			attr.style = '-webkit-transform: scale3d(1.3,1.3,1.3); transform: scale3d(1.3,1.3,1.3); -webkit-transform-origin:'+ mousePositionX + '% ' + mousePositionY + '%; transform-origin:'+ mousePositionX + '% ' + mousePositionY + '%;';
 		},false);
 		mainAttr.addEventListener('mouseout', function() {
 			attr.style = '-webkit-transform: scale3d(1,1,1); transform: scale3d(1,1,1); -webkit-transform-origin: 100% 100%; transform-origin: 100% 100%;';
