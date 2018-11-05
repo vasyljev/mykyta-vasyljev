@@ -67,7 +67,8 @@ $(document).ready(function(){
 	button.addEventListener('click', openWindow, false);
 	var newWindow = document.createElement('div');
 	
-	function openWindow() {			
+	function openWindow() {	
+		event=event||window.event;		
 		if(inputBox.value == '')	{
 			newWindow.innerHTML = '<div id="new-window"><div id="inner-block"><p>Field is empty!</p><p>Please, enter your E-Mail!</p><div id="ok-button">ok</div></div></div>';
 			document.body.appendChild(newWindow);		
@@ -78,6 +79,7 @@ $(document).ready(function(){
 	}
 
 	function closeWindow() {
+		event=event||window.event;
 		var newOpenWindow = document.getElementById('new-window');
 		var okButton = document.getElementById('ok-button');
 		var clickTarget = getTarget(event);
@@ -85,8 +87,9 @@ $(document).ready(function(){
 			document.body.removeChild(newWindow);
 		}		
 	}	
-	function getTarget(e) {
-		return e.target;
+	function getTarget(event) {	
+		var event = event || window.event;	
+		return event.target;
 	}
 	var portfolioButton1 = document.getElementById('portfolio-btn-1');
 	var portfolioButton2 = document.getElementById('portfolio-btn-2');
@@ -96,8 +99,9 @@ $(document).ready(function(){
 	var portfolioButton6 = document.getElementById('portfolio-btn-6');
 	var portfolioBlock = document.getElementsByClassName('portfolio');
 	portfolioBlock[0].addEventListener('click', showPotfolioDescription, false);
-	function showPotfolioDescription() {
-		var target = getTarget(event);
+	function showPotfolioDescription(event) {
+		var event = event || window.event;
+		var target = event.target;
 		var xhr = new XMLHttpRequest();
 		var jsonValue;	
 		function buildBlock() {			
@@ -169,15 +173,18 @@ $(document).ready(function(){
 		return scaleBackground(clientBackground, clientSection[0]);
 	}, false);
 
-	function scaleBackground(attr, mainAttr) {
+	function scaleBackground(attr, mainAttr) {		
 		attr.style = '-webkit-transform: scale3d(1.3,1.3,1.3); transform: scale3d(1.3,1.3,1.3);';		
-		mainAttr.addEventListener('mousemove', function() {
+		mainAttr.addEventListener('mousemove', function(event) {
+			var event = event || window.event;
 			var mousePositionX =100 - event.clientX*0.05, mousePositionY = 100 - event.clientY*0.05;
 			attr.style = '-webkit-transform: scale3d(1.3,1.3,1.3); transform: scale3d(1.3,1.3,1.3); -webkit-transform-origin:'+ mousePositionX + '% ' + mousePositionY + '%; transform-origin:'+ mousePositionX + '% ' + mousePositionY + '%;';
 		},false);
-		mainAttr.addEventListener('mouseout', function() {
+		mainAttr.addEventListener('mouseout', function(event) {
+			var event = event || window.event;
 			attr.style = '-webkit-transform: scale3d(1,1,1); transform: scale3d(1,1,1); -webkit-transform-origin: 100% 100%; transform-origin: 100% 100%;';
-			mainAttr.removeEventListener('mousemove', function() {
+			mainAttr.removeEventListener('mousemove', function(event) {
+				var event = event || window.event;
 				var mousePositionX =100 - event.clientX*0.05, mousePositionY = 100 - event.clientY*0.05;
 				attr.style = '-webkit-transform: scale3d(1.3,1.3,1.3); transform: scale3d(1.3,1.3,1.3); -webkit-transform-origin:'+ mousePositionX + '% ' + mousePositionY + '%; transform-origin:'+ mousePositionX + '% ' + mousePositionY + '%;';
 			});
