@@ -67,8 +67,8 @@ $(document).ready(function(){
 	button.addEventListener('click', openWindow, false);
 	var newWindow = document.createElement('div');
 	
-	function openWindow() {	
-		// event=event||window.event;			
+	function openWindow(event) {	
+		event=event||window.event;			
 		if(inputBox.value == '')	{
 			newWindow.innerHTML = '<div id="new-window"><div id="inner-block"><p>Field is empty!</p><p>Please, enter your E-Mail!</p><div id="ok-button">ok</div></div></div>';
 			document.body.appendChild(newWindow);		
@@ -78,9 +78,8 @@ $(document).ready(function(){
 		}				
 	}
 
-	function closeWindow() {
-		// event=event||window.event;
-		// event.preventDefault();
+	function closeWindow(event) {
+		event=event||window.event;
 		var newOpenWindow = document.getElementById('new-window');
 		var okButton = document.getElementById('ok-button');
 		var clickTarget = getTarget(event);
