@@ -68,18 +68,19 @@ $(document).ready(function(){
 	var newWindow = document.createElement('div');
 	
 	function openWindow() {	
-		event=event||window.event;		
+		// event=event||window.event;			
 		if(inputBox.value == '')	{
 			newWindow.innerHTML = '<div id="new-window"><div id="inner-block"><p>Field is empty!</p><p>Please, enter your E-Mail!</p><div id="ok-button">ok</div></div></div>';
 			document.body.appendChild(newWindow);		
 			newWindow.addEventListener('click', closeWindow, false);
 			console.log(inputBox.value);
-			event.preventDefault();
+			event.preventDefault();				
 		}				
 	}
 
 	function closeWindow() {
-		event=event||window.event;
+		// event=event||window.event;
+		// event.preventDefault();
 		var newOpenWindow = document.getElementById('new-window');
 		var okButton = document.getElementById('ok-button');
 		var clickTarget = getTarget(event);
