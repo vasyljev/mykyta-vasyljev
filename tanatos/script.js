@@ -21,11 +21,11 @@ $(document).ready(function(){
 	var thirdAnimHeight;
 
 	if ($(this).width() > 940) {
-		firstAnimHeight = 100;
+		firstAnimHeight = 180;
 		secondAnimHeight = 1100;
 		thirdAnimHeight = 2800;
 	} if (($(this).width() < 940)&&($(this).width() > 720)) {
-		firstAnimHeight = 150;
+		firstAnimHeight = 230;
 		secondAnimHeight = 1000;
 		thirdAnimHeight = 2700;
 	} else if ($(this).width() < 720)  {

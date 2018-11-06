@@ -1,7 +1,7 @@
 $(document).ready(function(){
     setTimeout(function() {
         $('#slider').addClass('animate');
-    }, 1500);  
+    }, 1000);  
     $('.scroll_to').click(function(e){
         var jump = $(this).attr('href');
         var new_position = $(jump).offset();
@@ -14,11 +14,11 @@ $(document).ready(function(){
     var blockStatus = true;
     $(window).scroll(function() {
         if($(this).width() > 870) {
-            firstAnimHeight = 300;
+            firstAnimHeight = 350;
             secondAnimHeight = 1700;
             thirdAnimHeight = 2300;
         } else if ($(this).width() < 870) {
-            firstAnimHeight = 400;
+            firstAnimHeight = 450;
             secondAnimHeight = 1900;
             thirdAnimHeight = 3100;
         }  
